@@ -21,6 +21,10 @@ h1, h2  {
   letter-spacing: 1px;
 }
 
+.header-container {
+  background-color: #282828 !important;
+}
+
 .input-style {
   background-color: #282828 !important;
   color: white !important;
