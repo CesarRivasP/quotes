@@ -4,14 +4,24 @@ import Form from './components/form';
 
 function App() {
   // useState
-  const [quote, updateQuote] = useState([]);
+  const [quotes, updateQuote] = useState([]);
+
+  // Agregar las nuevas citas
+  const createQuote = (quote) => {
+    // tomar una copia del state y tomar el nuevo cliente
+    const newQuotes = [ ...quotes, quote];
+
+    // Almacenamos en el state
+    updateQuote(newQuotes);
+  }
+
   return (
     <Fragment>
       <h1>Administrador de Pacientes</h1>
       <div className="container">
         <div className="row">
           <div className="one-half column">
-            <Form />
+            <Form createQuote={createQuote} />
           </div>
           <div className="one-half column">
 
