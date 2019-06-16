@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-function Form(){
+function Form({ createQuote }){
 
   const [quote, updateQuote] = useState({
     patient: '',
@@ -12,13 +12,22 @@ function Form(){
 
   const handleChange = (e) => {
     updateQuote({
-      ...quote,
+      ...quote, //es la manera de mantener vigente lo que ingresas en cada uno de los campos
       [e.target.name]: e.target.value
     })
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Pasar la cita hacia el componente principal
+    createQuote(quote);
+
+    // reiniciar el form
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="patient">Nombre de Paciente</label>
       <input
         id="patient"
