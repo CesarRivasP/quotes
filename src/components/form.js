@@ -33,7 +33,7 @@ function Form({ createQuote }){
     <form onSubmit={handleSubmit}>
       <h2 className="quote-title">Crear Cita</h2>
 
-      <label htmlFor="patient">Nombre de Paciente</label>
+      <label htmlFor="patient">Nombre del Paciente</label>
       <input
         id="patient"
         type="text"
@@ -77,7 +77,6 @@ function Form({ createQuote }){
       <button className="u-full-width button-submit">
         Agregar
       </button>
-
     </form>
   )
 }
