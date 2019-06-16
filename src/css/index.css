@@ -71,9 +71,10 @@ input[type="time"] {
 
 .cita {
   padding: 2rem;
-  background: white;
-  border-bottom: 1px solid #e1e1e1;
-  color: black;
+  background: #282828;
+  border-bottom: 1px solid #282828;
+  color: #FFFFFF;
+  margin-top: 2px;
 }
 
 .cita p {
@@ -86,13 +87,13 @@ input[type="time"] {
 }
 
 .cita:first-of-type {
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .cita:last-of-type {
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .button.eliminar,
