@@ -16,6 +16,12 @@ function App() {
     updateQuote(newQuotes);
   }
 
+  const deleteQuote = (index) => {
+    const newQuotes = [ ...quotes ];
+    newQuotes.splice(index,1);  //splice permite eliminar elementos de un array
+    updateQuote(newQuotes);
+  }
+
   return (
     <Fragment>
       <h1>Administrador de Pacientes</h1>
@@ -27,7 +33,7 @@ function App() {
           <div className="one-half column">
             {
               quotes.map((quote, index) => (
-                <Quote key={index} index={index} quote={quote} />
+                <Quote key={index} index={index} quote={quote} deleteQuote={deleteQuote} />
               ))
             }
           </div>
