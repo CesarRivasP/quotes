@@ -3,12 +3,14 @@ import React, { useState } from 'react';
 
 function Form({ createQuote }){
 
-  const [quote, updateQuote] = useState({
+  const initialState = {
     patient: '',
     date: '',
     time: '',
     symptom: ''
-  });
+  };
+
+  const [quote, updateQuote] = useState(initialState);
 
   const handleChange = (e) => {
     updateQuote({
@@ -24,15 +26,19 @@ function Form({ createQuote }){
     createQuote(quote);
 
     // reiniciar el form
+    updateQuote(initialState)
   }
 
   return (
     <form onSubmit={handleSubmit}>
+      <h2 className="quote-title">Crear Cita</h2>
+
       <label htmlFor="patient">Nombre de Paciente</label>
       <input
         id="patient"
         type="text"
         name="patient"
+        value={quote.patient}
         className="u-full-width input-style"
         onChange={handleChange}
       />
@@ -42,6 +48,7 @@ function Form({ createQuote }){
         id="date"
         type="date"
         name="date"
+        value={quote.date}
         className="u-full-width input-style"
         onChange={handleChange}
       />
@@ -51,6 +58,7 @@ function Form({ createQuote }){
         type="time"
         name="time"
         id="time"
+        value={quote.time}
         className="u-full-width input-style"
         onChange={handleChange}
       />
@@ -61,11 +69,12 @@ function Form({ createQuote }){
         id="symptom"
         cols="30"
         rows="10"
+        value={quote.symptom}
         className="u-full-width input-style"
         onChange={handleChange} >
       </textarea>
 
-      <button className="u-full-width button-color">
+      <button className="u-full-width button-submit">
         Agregar
       </button>
 
