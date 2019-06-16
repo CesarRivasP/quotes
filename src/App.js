@@ -1,5 +1,6 @@
 import React, { useState, Fragment } from 'react';
 import Form from './components/form';
+import Quote from './components/quote';
 
 
 function App() {
@@ -24,7 +25,11 @@ function App() {
             <Form createQuote={createQuote} />
           </div>
           <div className="one-half column">
-
+            {
+              quotes.map((quote, index) => (
+                <Quote key={index} index={index} quote={quote} />
+              ))
+            }
           </div>
         </div>
       </div>
